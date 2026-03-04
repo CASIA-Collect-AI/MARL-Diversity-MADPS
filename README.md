@@ -22,15 +22,15 @@ This paper proposes **MADPS** (Multi-agent Dynamic Parameter Sharing), a method 
 
 ## 🚀 Extended Work: HetDPS (AAMAS 2026)
 
-> **本工作的全面扩充版已发表于 AAMAS 2026！**
+> **A comprehensive extension of this work has been published at AAMAS 2026!**
 >
-> 我们的后续工作 [**Heterogeneity in Multi-Agent Reinforcement Learning**](https://arxiv.org/pdf/2512.22941) 在本文基础上进行了系统性拓展：
+> Our follow-up work [**Heterogeneity in Multi-Agent Reinforcement Learning**](https://arxiv.org/pdf/2512.22941) systematically extends this paper:
 >
-> - **更丰富的异构类型：** 不仅限于策略异构（policy heterogeneity），还系统讨论了观测异构、转移异构、目标异构等多种异构距离的量化方法
-> - **升级版算法 HetDPS：** 提出 Meta-Heterogeneity Distance 与 Heterogeneity-based Dynamic Parameter Sharing，具有更好的可解释性与更少的任务相关超参数
-> - **更完整的理论框架：** 从*定义*、*量化*、*利用*三个维度系统阐述 MARL 中的异构性
+> - **Richer heterogeneity types:** Beyond policy heterogeneity, we discuss quantification methods for observation heterogeneity, transition heterogeneity, objective heterogeneity, and other heterogeneous distances.
+> - **Upgraded algorithm HetDPS:** We propose Meta-Heterogeneity Distance and Heterogeneity-based Dynamic Parameter Sharing, offering better interpretability and fewer task-specific hyperparameters.
+> - **Complete theoretical framework:** We systematically elaborate on heterogeneity in MARL from three perspectives: *definition*, *quantification*, and *utilization*.
 >
-> 欢迎阅读 [论文](https://arxiv.org/pdf/2512.22941) 获取完整理论与方法。
+> See the [paper](https://arxiv.org/pdf/2512.22941) for the full theory and methods.
 
 ---
 
