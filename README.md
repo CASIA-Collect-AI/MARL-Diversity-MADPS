@@ -36,7 +36,8 @@ This paper proposes **MADPS** (Multi-agent Dynamic Parameter Sharing), a method 
 - **Policy Distance Measurement:** We train a Conditional VAE to learn conditional representations of agents' decisions, then compute multi-agent policy distance matrices between agents.
 - **Dynamic Parameter Sharing:** Based on the policy distance matrix, we automatically adjust the parameter sharing scheme among agents, enabling more flexible and interpretable multi-agent learning.
 
-![Overview](imgs/fig_overview.png)
+<div align="center"><img src="imgs/fig_overview.png" width="620"></div>
+
 *The relationship between our contributions and MARL. Contributions are highlighted in bold and italics.*
 
 ---
@@ -64,7 +65,8 @@ Directly comparing action distributions across agents is difficult—different a
 - **Decoder:** Reconstruct action distribution from `z` and `o`
 - Training uses known policy distributions directly, **avoiding the inefficiency of environment sampling**
 
-![CVAE Architecture](imgs/fig_cvae.png)
+<div align="center"><img src="imgs/fig_cvae.png" width="700"></div>
+
 *Learning the conditional representation of an agent's decision via CVAE.*
 
 #### Step 2: Computing Multi-Agent Policy Distance (MAPD)
@@ -85,7 +87,8 @@ Based on the policy distance matrix, MADPS executes merge/split operations every
 - **Division:** `d_ij > ε₂` → decouple parameters to maintain diversity
 - **Design constraint:** `ε₂ ≥ 2ε₁` (derived from the triangle inequality to prevent oscillation)
 
-![Dynamic Parameter Sharing](imgs/fig_dynamic_ps.png)
+<div align="center"><img src="imgs/fig_dynamic_ps.png" width="620"></div>
+
 *The basic idea of dynamic parameter sharing: agents with similar policies share parameters; divergent agents separate.*
 
 The sharing scheme **self-adapts** throughout training—no manual cluster count required.
@@ -102,7 +105,8 @@ The sharing scheme **self-adapts** throughout training—no manual cluster count
 | v2 | 30 | 3 | Large-scale |
 | v3–v6 | 30 | 5 | Heterogeneous / shuffled observations |
 
-![Experimental Results](imgs/fig_results.png)
+<div align="center"><img src="imgs/fig_results.png" width="750"></div>
+
 *Performance comparison with baselines on multi-agent spread tasks and SMAC super-hard tasks.*
 
 **Key findings:**
@@ -125,7 +129,8 @@ MADPS only explicitly leverages **policy heterogeneity**. HetDPS extends this to
 4. **Objective Heterogeneity:** Differences in reward functions
 5. **Policy Heterogeneity:** Differences in decision-making based on observations *(MADPS covers only this)*
 
-![HetDPS Method](imgs/fig_hetdps_method.png)
+<div align="center"><img src="imgs/fig_hetdps_method.png" width="750"></div>
+
 *HetDPS: measuring heterogeneity distance via representation learning across all five heterogeneity types.*
 
 **HetDPS Key Advantages:**
@@ -133,7 +138,8 @@ MADPS only explicitly leverages **policy heterogeneity**. HetDPS extends this to
 - Eliminates task-specific hyperparameters (no need to set cluster count K)
 - Enhanced interpretability through visualizable distance matrices
 
-![HetDPS Results](imgs/fig_hetdps_results.png)
+<div align="center"><img src="imgs/fig_hetdps_results.png" width="700"></div>
+
 *HetDPS results on Particle-based Multi-agent Spreading tasks, achieving optimal or comparable performance.*
 
 ---

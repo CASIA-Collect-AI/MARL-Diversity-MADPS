@@ -36,7 +36,8 @@
 - **策略距离度量：** 训练条件变分自编码器（CVAE）学习智能体决策的条件表示，进而计算智能体间的多智能体策略距离矩阵。
 - **动态参数共享：** 基于策略距离矩阵，自动调整智能体间的参数共享方案，实现更灵活、可解释的多智能体学习。
 
-![总览图](imgs/fig_overview.png)
+<div align="center"><img src="imgs/fig_overview.png" width="620"></div>
+
 *本文贡献与多智能体强化学习的关系（粗斜体为核心贡献）*
 
 ---
@@ -64,7 +65,8 @@
 - **解码器：** 从 `z` 和 `o` 重建动作分布
 - 训练直接使用已知策略分布，**避免了环境采样的低效性**
 
-![CVAE 架构](imgs/fig_cvae.png)
+<div align="center"><img src="imgs/fig_cvae.png" width="700"></div>
+
 *通过 CVAE 学习智能体决策的条件表示*
 
 #### 第二步：计算多智能体策略距离（MAPD）
@@ -85,7 +87,8 @@ d_ij = ∫ W[p_i(z|o), p_j(z|o)] do
 - **分裂：** `d_ij > ε₂` → 解耦参数以保持多样性
 - **设计约束：** `ε₂ ≥ 2ε₁`（由三角不等式推导，防止震荡）
 
-![动态参数共享](imgs/fig_dynamic_ps.png)
+<div align="center"><img src="imgs/fig_dynamic_ps.png" width="620"></div>
+
 *动态参数共享的基本思想：策略相似的智能体共享参数；策略差异大的智能体独立学习*
 
 共享方案在整个训练过程中**自适应调整**——无需手动设置聚类数。
@@ -102,7 +105,8 @@ d_ij = ∫ W[p_i(z|o), p_j(z|o)] do
 | v2 | 30 | 3 | 大规模 |
 | v3–v6 | 30 | 5 | 异构 / 打乱观测 |
 
-![实验结果](imgs/fig_results.png)
+<div align="center"><img src="imgs/fig_results.png" width="750"></div>
+
 *在多智能体扩散任务和 SMAC 超难任务上与基线方法的性能对比*
 
 **核心发现：**
@@ -125,7 +129,8 @@ MADPS 仅显式利用了**策略异构性**。HetDPS 将其扩展为完整的异
 4. **目标异构性：** 奖励函数不同
 5. **策略异构性：** 基于观测的决策不同 *（MADPS 仅覆盖此项）*
 
-![HetDPS 方法](imgs/fig_hetdps_method.png)
+<div align="center"><img src="imgs/fig_hetdps_method.png" width="750"></div>
+
 *HetDPS：通过跨五种异构性类型的表示学习度量异构距离*
 
 **HetDPS 核心优势：**
@@ -133,7 +138,8 @@ MADPS 仅显式利用了**策略异构性**。HetDPS 将其扩展为完整的异
 - 消除任务特定超参数（无需设置聚类数 K）
 - 通过可视化距离矩阵增强可解释性
 
-![HetDPS 结果](imgs/fig_hetdps_results.png)
+<div align="center"><img src="imgs/fig_hetdps_results.png" width="700"></div>
+
 *HetDPS 在基于粒子的多智能体扩散任务上的结果，达到最优或相当的性能*
 
 ---
